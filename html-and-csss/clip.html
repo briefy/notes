@@ -1,0 +1,33 @@
+<!Doctype html>
+<html>
+
+<head>
+  <title>clip example</title>
+</head>
+
+<body>
+  <p>The <strong>clip</strong> property lets you specify a rectangle to clip an absolutely positioned element</p>
+  <p><em>clip: auto|shape|initial|inherit;</em></p>
+  <p>shape Clips an element.<strong> The only valid value is:</strong> rect (top, right, bottom, left)</p>
+  <p>top left bottom left is based on the absolutely positioned element</p>
+  <p>not the parant element</p>
+  <div style="position: relative;width:100%;height:400px;background:red">
+    <div style="position:absolute;width:100%;height:100%;clip:rect(0,auto,auto,0)">
+      <div style="position:fixed;width:100%;height:100%;background:blue">
+
+      </div>
+    </div>
+  </div>
+  <div style="height:120vh;background:lightgray">
+    <a href="http://facebook.github.io/immutable-js/" target="new_target">
+      this example is inspired by the immutable home page,
+      a good html effect used with clip .
+    </a>
+    <pre>
+      pay some attention to the initial top value of the fixed div element
+      if ommitted,top has a default value
+    </pre>
+  </div>
+</body>
+
+</html>
