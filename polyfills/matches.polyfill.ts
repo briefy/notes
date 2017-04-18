@@ -5,7 +5,7 @@
  */
 
 interface Matches{
-  (selector: string): boolean;
+  (selector: NodeSelector): boolean;
 }
 
 (function polyfill(w :  Window) {
@@ -27,13 +27,10 @@ interface Matches{
         break;
       }
     }
-    interface Ee extends Element{
-      document:Document
-    }
 
-    EleProto.matches = polyfill || function (this: Element,selector) {
+    EleProto.matches = polyfill || function (this: Element,selector:NodeSelector) {
       const doc = this.ownerDocument;
-      const selected = [].slice.call(doc.querySelectorAll(selector),0);
+      const selected:NodeListOf<Element>= [].slice.call(doc.querySelectorAll(selector),0);
       const len = selected.length;
       let ifMatch = false;
 
