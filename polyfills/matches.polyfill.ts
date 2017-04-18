@@ -4,7 +4,11 @@
  *
  */
 
-(function polyfill(w) {
+interface Matches{
+  (selector: string): boolean;
+}
+
+(function polyfill(w :  Window) {
   if (!w) {
     return;
   }
@@ -13,20 +17,24 @@
 
   if (typeof EleProto.matches !== 'function') {
     const prefixs = ['', 'ms', 'moz', 'o', 'webkit'];
-    let polyfill = null;
+    let polyfill:Matches = null;
 
     for (let i = 0; i < prefixs.length; i++) {
-      let prefix = prefixs[i];
-      let func = EleProto[`${prefix}matchesSelector`];
+      const prefix = prefixs[i];
+      const func:Matches = EleProto[`${prefix}matchesSelector`];
       if (typeof func === 'function') {
         polyfill = func;
         break;
       }
     }
+    interface Ee extends Element{
+      document:Document
+    }
 
-    EleProto.matches = polyfill || function (selector) {
-      let selected = (this.document || this.ownerDocument).querySelecorAll(selector);
-      let len = selected.length;
+    EleProto.matches = polyfill || function (this: Element,selector) {
+      const doc = this.ownerDocument;
+      const selected = [].slice.call(doc.querySelectorAll(selector),0);
+      const len = selected.length;
       let ifMatch = false;
 
       for (let i = 0; i < len; i++) {
