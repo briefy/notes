@@ -25,7 +25,7 @@
     }
 
     EleProto.matches = polyfill || function (selector) {
-      let selected = (this.document || this.ownerDocument).querySelecorAll(selector);
+      let selected = (this.document || this.ownerDocument).querySelectorAll(selector);
       let len = selected.length;
       let ifMatch = false;
 
