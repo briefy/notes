@@ -1,0 +1,28 @@
+{
+  "name": "notesofbriefy",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
+  },
+  "dependencies": {
+    "@types/node": "^7.0.13",
+    "typescript": "^2.2.2"
+  },
+  "types": [],
+  "devDependencies": {
+    "@types/jest": "^19.2.2",
+    "ts-jest": "^19.0.10"
+  }
+}
