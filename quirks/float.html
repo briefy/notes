@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+  <!--
+    TODO: review the explanation
+  -->
+  <!--
+    when white-space&float been used together,
+    we may encounter a problem in FIREFOX.
+    the floated elements will be put in the next line,
+    so we say that they are wrapped.
+    SOLUTIONS:
+
+    1. change white-space to `normal`, `nowrap` works in
+       other webkit browsers but FF.
+    2. let floated elements to be in front of the
+       none-floated elements
+  -->
+  <meta charset="UTF-8">
+  <title>float</title>
+  <style>
+    .box {
+      width: 130px;
+      height: 26px;
+      border: 1px solid red;
+      white-space: nowrap;
+    }
+
+    .float {
+      float: right;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <span>测试FAQ</span>
+    <span class="float">xxx</span>
+    <span class="float">xxx</span>
+  </div>
+</body>
+
+</html>
