@@ -4,11 +4,11 @@
  *
  */
 
-interface Matches{
+interface Matches {
   (selector: string): boolean;
 }
 
-(function polyfill(w :  Window) {
+(function polyfill(w: Window) {
   if (!w) {
     return;
   }
@@ -17,20 +17,20 @@ interface Matches{
 
   if (typeof EleProto.matches !== 'function') {
     const prefixs = ['', 'ms', 'moz', 'o', 'webkit'];
-    let polyfill:Matches = null;
+    let polyfill: Matches = null;
 
     for (let i = 0; i < prefixs.length; i++) {
       const prefix = prefixs[i];
-      const func:Matches = EleProto[`${prefix}matchesSelector`];
+      const func: Matches = EleProto[`${prefix}matchesSelector`];
       if (typeof func === 'function') {
         polyfill = func;
         break;
       }
     }
 
-    EleProto.matches = polyfill || function (this: Element,selector) {
+    EleProto.matches = polyfill || function (this: Element, selector) {
       const doc = this.ownerDocument;
-      const selected:NodeListOf<Element>= [].slice.call(doc.querySelectorAll(selector),0);
+      const selected: NodeListOf<Element> = [].slice.call(doc.querySelectorAll(selector), 0);
       const len = selected.length;
       let ifMatch = false;
 

@@ -2,7 +2,8 @@
   "name": "notesofbriefy",
   "version": "0.0.1",
   "scripts": {
-    "test": "jest"
+    "pretest": "tslint",
+    "test": "jest --coverage"
   },
   "jest": {
     "transform": {
@@ -16,13 +17,22 @@
       "json"
     ]
   },
+  "author": "briefy",
+  "license": "ISC",
   "dependencies": {
     "@types/node": "^7.0.13",
-    "typescript": "^2.2.2"
+    "typescript": "^2.3.2"
   },
   "types": [],
   "devDependencies": {
     "@types/jest": "^19.2.2",
-    "ts-jest": "^19.0.10"
+    "eslint": "^3.19.0",
+    "jest": "^20.0.0",
+    "ts-jest": "^19.0.10",
+    "tslint": "^5.2.0",
+    "tslint-consistent-codestyle": "^1.2.0",
+    "tslint-eslint-rules": "^4.0.0",
+    "tslint-immutable": "^3.2.0",
+    "tslint-react": "^3.0.0"
   }
 }
