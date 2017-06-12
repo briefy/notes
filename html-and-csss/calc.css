@@ -1,0 +1,44 @@
+/**
+* calc 可以对数值进行四则运算，
+* 数据类型 length frequency angle time number integer
+*/
+
+.foo {
+  width: calc(50vmax + 3rem);
+  padding: calc(1vw + 1em);
+  /* TODO: remove the warning in my vs code */
+  -webkit-transform: rotate(calc(1turn + 28deg));
+  -ms-transform: rotate(calc(1turn + 28deg));
+  transform: rotate(calc(1turn + 28deg));
+  background: hsl(100, calc(3*20%), 40%);
+  font-size: calc(50vw / 3);
+}
+
+
+/** calc嵌套 */
+
+.foo {
+  width: calc(1005 / calc(100px * 2));
+}
+
+
+/** 元素居中 */
+
+.foo {
+  position: absolute;
+  top: calc(50%- 150px);
+  left: calc(50% - 150px);
+}
+
+
+/** 创建栅格尺寸
+  * 1rem = 1/30rem
+ */
+
+html {
+  font-size: calc(100vw / 30);
+}
+
+.foo {
+  width: calc(100% / 6);
+}
