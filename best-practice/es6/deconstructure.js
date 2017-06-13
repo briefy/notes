@@ -40,6 +40,3 @@ var { a: { b: c } } = { a: { b: { c: 1 } } }
 var { a: { b: c } } = { a: { b: { c: 1 } } }
 
 var { a = 'default' } = {};
-
-
-
